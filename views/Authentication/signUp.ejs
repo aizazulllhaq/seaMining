@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUp</title>
+  <style>
+    .container {
+      padding: 20px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div {
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <form action="/api/users/signup" method="post" enctype="multipart/form-data">
+      <div>
+        <input type="text" placeholder="fullname" name="fullname">
+      </div>
+      <div>
+        <input type="email" name="email" placeholder="email">
+      </div>
+      <div>
+        <input type="file" name="profileImage" placeholder="Profile Image">
+      </div>
+      <div>
+        <input type="number" name="phoneNumber" placeholder="Phone Number">
+      </div>
+      <div>
+        <input type="text" name="address" placeholder="Address">
+      </div>
+      <div>
+        <input type="password" name="password" placeholder="Enter Secure Password">
+      </div>
+      <div>
+        <button type="submit">submit</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
