@@ -14,9 +14,9 @@ exports.passportConfiguration = () => {
     })
 
     passport.use(new GoogleStrategy({
-        clientID: "832316432958-at09oo9fa24e73vvoe8hd3t8ag504v6t.apps.googleusercontent.com",
-        clientSecret: "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",
-        callbackURL: "http://localhost:8080/auth/google/callback",
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: process.env.GOOGLE_CALLBACK_URL,
         passReqToCallback: true,
     },
         async function (request, accessToken, refreshToken, profile, done) {
