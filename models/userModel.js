@@ -75,6 +75,10 @@ const userSchema = new Schema({
     ],
     googleId: {
         type: Number
+    },
+    lastMiningTime: {
+        type: Number,
+        default: null,
     }
 }, {
     timestamps: true

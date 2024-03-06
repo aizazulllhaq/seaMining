@@ -14,6 +14,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const { passportConfiguration } = require('./config/passport');
+const homeRouter = require('./routes/homeRoutes');
 
 
 
@@ -51,12 +52,8 @@ app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login', successRedirect: "/dashboard" }));
 
 app.use("/api/users", userRouter);
-app.use('/dashboard', restrictTo(["USER", "ADMIN"]), (req, res) => {
-    res.json({
-        success: true,
-        msg: "Welcome to Dashboard",
-    })
-})
+app.use('/dashboard', restrictTo(["USER", "ADMIN"]), homeRouter)
+
 
 // Pages which Doesn't Exists
 app.all("*", (req, res, next) => {
